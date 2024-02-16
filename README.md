@@ -23,7 +23,7 @@ https://www.asidesigned.com/project-libft.html
 
 https://www.learn-c.org/
 
-https://seriouscomputerist.atariverse.com/media/pdf/book/C%20Programming%20Language%20-%202nd%20Edition%20(OCR).pdf
+[C-Programming-Language-2nd-Edition.pdf](https://github.com/MarkosComK/42-Libft/files/14312769/C-Programming-Language-2nd-Edition.pdf)
 
 # Libft Functions
 
