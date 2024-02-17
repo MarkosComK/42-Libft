@@ -35,8 +35,8 @@ https://www.learn-c.org/
 
 [C-Programming-Language-2nd-Edition.pdf](https://github.com/MarkosComK/42-Libft/files/14312769/C-Programming-Language-2nd-Edition.pdf)
 
-For detailed information, refer to the [**subject of this project**]([00-libft-en.pdf](https://github.com/MarkosComK/42-Libft/files/14319130/00-libft-en.pdf)
-).
+For detailed information, refer to the [subject of the project](https://github.com/MarkosComK/42-Libft/files/14319130/00-libft-en.pdf)
+.
 
 	🚀 This project consists of coding basic C functions (see below), which are then compiled
 	into a library for use in other projects of the cursus.
