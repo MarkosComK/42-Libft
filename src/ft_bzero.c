@@ -6,30 +6,17 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 10:50:30 by marsoare          #+#    #+#             */
-/*   Updated: 2024/02/18 11:21:42 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/02/20 17:54:58 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
-{
-	char	*str;
-
-	str = (char *)s;
-	while(n > 0)
-	{
-		str[n - 1] = c;
-		n--;
-	}
-	return (str);
-}
-
 void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
 }
-/*
+
 #include <stdio.h>
 int	main(void)
 {
@@ -45,4 +32,3 @@ int	main(void)
 	}
 	return (0);
 }
-*/
