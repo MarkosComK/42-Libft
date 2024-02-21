@@ -29,14 +29,16 @@
 
 # Great Resources for Libft
 
-https://www.asidesigned.com/project-libft.html 
+[Libft functions](https://www.asidesigned.com/project-libft.html) 
 
-https://www.learn-c.org/
+[Learn C](https://www.learn-c.org/)
 
-[C-Programming-Language-2nd-Edition.pdf](https://github.com/MarkosComK/42-Libft/files/14312769/C-Programming-Language-2nd-Edition.pdf)
+[Makefile tutor](https://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/)
+
+[C-Programming-Language-2nd-Edition (PDF)](https://github.com/MarkosComK/42-Libft/files/14312769/C-Programming-Language-2nd-Edition.pdf)
 
 For detailed information, refer to the [subject of the project](https://github.com/MarkosComK/42-Libft/files/14319130/00-libft-en.pdf)
-.
+
 
 	🚀 This project consists of coding basic C functions (see below), which are then compiled
 	into a library for use in other projects of the cursus.
