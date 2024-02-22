@@ -14,4 +14,10 @@ $(NAME): $(FUNCS)
 all: $(NAME)
 
 clean:
-	rm -rf *.o
+	rm -f *.o
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
+
