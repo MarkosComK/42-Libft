@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I.
 DEPS = libft.h
-FUNCS = ft_bzero.c ft_memset.c main.c
+FUNCS = ft_bzero.c ft_memset.c ft_memcpy.c main.c
 NAME = libft.a
 
 

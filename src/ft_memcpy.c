@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/18 10:46:45 by marsoare          #+#    #+#             */
-/*   Updated: 2024/02/22 13:20:18 by marsoare         ###   ########.fr       */
+/*   Created: 2024/02/22 13:16:14 by marsoare          #+#    #+#             */
+/*   Updated: 2024/02/22 13:44:23 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft.h"
 
-# include <stdlib.h>
-# include <unistd.h>
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	char	*str;
+	char	*d;
 
-void	*ft_memset(void *s, int c, size_t n);
-void	ft_bzero(void *s, size_t n);
-void	*ft_memcpy(void *dest, const void *src, size_t m);
-
-#endif
+	str = (char *)src;
+	d = (char *)dest;
+	while (n > 0)
+	{
+		d[n - 1] = str[n - 1];
+		n--;
+	}
+	return (d);
+}
