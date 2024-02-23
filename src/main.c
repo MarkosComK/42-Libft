@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 13:54:12 by marsoare          #+#    #+#             */
-/*   Updated: 2024/02/22 14:15:30 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/02/23 09:46:41 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@
 
 int	main(void)
 {
-	char	str[7];
-	char	dest[7];
+	int	nums[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-	strcpy(str, "Markos");
-	ft_memccpy(dest, str, 'r', 6);
-	printf("%s\n", dest);
+	memmove(nums, nums + 7, sizeof(int) * 1);
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%d ", nums[i]);
+	}
 	return (0);
 }
