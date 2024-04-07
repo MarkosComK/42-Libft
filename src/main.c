@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 13:54:12 by marsoare          #+#    #+#             */
-/*   Updated: 2024/02/23 09:46:41 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/07 12:45:33 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 int	main(void)
 {
+	/*
 	int	nums[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
 	memmove(nums, nums + 7, sizeof(int) * 1);
@@ -24,4 +25,7 @@ int	main(void)
 		printf("%d ", nums[i]);
 	}
 	return (0);
+	*/
+	printf("%d", atoi("  123"));
+	printf("%d", ft_atoi("  123"));
 }
