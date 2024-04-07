@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 13:54:12 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/07 12:54:52 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/07 12:57:14 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ int	main(void)
 	}
 	return (0);
 	*/
-	printf("%d\n", atoi("   123"));
-	printf("%d\n", ft_atoi("   123"));
+	printf("%d\n", atoi("   -123"));
+	printf("%d\n", ft_atoi("   -123"));
 }
