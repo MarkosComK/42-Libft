@@ -49,7 +49,7 @@ For detailed information, refer to the [subject of the project](https://github.c
 * [`ft_isalnum`](libft/src/is/ft_isalnum.c)			- alphanumeric character test.
 * [`ft_isalpha`](libft/src/is/ft_isalpha.c)			- alphabetic character test.
 * [`ft_islower`](libft/src/is/ft_islower.c) *	- lower-case character test.
-* [`ft_isupper`](libft/src/ft_isupper.c) *	- upper-case character test.
+* [`ft_isupper`](src/ft_isupper.c) *	- upper-case character test.
 * [`ft_isdigit`](libft/src/is/ft_isdigit.c)			- decimal-digit character test.
 * [`ft_isxdigit`](libft/src/is/ft_isxdigit.c) *	- hexadecimal-digit character test.
 * [`ft_isprint`](libft/src/is/ft_isprint.c)			- printing character test (space character inclusive).
