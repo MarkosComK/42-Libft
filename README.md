@@ -59,7 +59,7 @@ For detailed information, refer to the [subject of the project](https://github.c
 * [`ft_ispunct`](libft/src/is/ft_ispunct.c) *	- punctuation character test.
 * [`ft_iscntrl`](libft/src/is/ft_iscntrl.c) *	- control character test.
 * [`ft_tolower`](libft/src/to/ft_tolower.c)			- upper case to lower case letter conversion.
-* [`ft_toupper`](libft/src/to/ft_toupper.c)			- lower case to upper case letter conversion.
+* [`ft_toupper`](src/ft_toupper.c)			- lower case to upper case letter conversion.
 
 ### Functions from `<stdlib.h>` library
 
