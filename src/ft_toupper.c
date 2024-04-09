@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 15:15:53 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/09 15:18:43 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/09 15:21:55 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,5 @@ int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 		return (c - 32);
-	else
-		return (c);
+	return (c);
 }
