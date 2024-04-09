@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 13:54:12 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/09 15:19:31 by marsoare         ###   ########.fr       */
+/*   Created: 2024/04/09 15:15:53 by marsoare          #+#    #+#             */
+/*   Updated: 2024/04/09 15:18:43 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <libft.h>
-#include <string.h>
-#include <ctype.h>
+#include "libft.h"
 
-int	main(int ac, char *av[])
+int	ft_toupper(int c)
 {
-	(void) ac;
-	(void) av;
-	printf("%c\n", ft_toupper('a'));
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	else
+		return (c);
 }
