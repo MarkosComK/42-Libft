@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 12:47:28 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/10 13:43:14 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/10 13:52:43 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_tolower(int c)
 {
-	if(c >= 65 && c <= 90)
-	    return (c + 32);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
 	return (c);
 }
