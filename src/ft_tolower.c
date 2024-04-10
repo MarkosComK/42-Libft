@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marsoare <marsoare@student.42porto.co      +#+  +:+       +#+        */
+/*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 12:47:28 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/10 13:52:43 by marsoare         ###   ########.fr       */
+/*   Created: 2024/04/10 14:45:35 by marsoare          #+#    #+#             */
+/*   Updated: 2024/04/10 14:45:44 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
