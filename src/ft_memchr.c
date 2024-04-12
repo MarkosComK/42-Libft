@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 13:54:12 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/12 18:15:45 by marsoare         ###   ########.fr       */
+/*   Created: 2024/04/12 17:21:56 by marsoare          #+#    #+#             */
+/*   Updated: 2024/04/12 18:11:48 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <libft.h>
-#include <bsd/string.h>
-#include <ctype.h>
+#include "libft.h"
 
-int	main(int ac, char *av[])
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	(void) ac;
-	(void) av;
-	char	s1[13] = "Markos";
-//	char	s2[13] = "Markos";
-	
-	printf("%s\n", (char *)memchr(s1, 'a', 12));
-	printf("%s\n", (char *)ft_memchr(s1, 'a', 12));
-	return (0);
+	size_t	i;
+	unsigned char	*p;
+
+	i = 0;
+	p = (unsigned char *)s;
+	while (i < n)
+	{
+		if (p[i] == (unsigned char)c)
+			return (&p[i]);
+		i++;
+	}
+	return (NULL);
 }
