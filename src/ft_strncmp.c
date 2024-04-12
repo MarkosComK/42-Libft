@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 13:54:12 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/12 17:20:10 by marsoare         ###   ########.fr       */
+/*   Created: 2024/04/12 16:59:14 by marsoare          #+#    #+#             */
+/*   Updated: 2024/04/12 17:18:57 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <libft.h>
-#include <bsd/string.h>
-#include <ctype.h>
+#include "libft.h"
 
-int	main(int ac, char *av[])
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	(void) ac;
-	(void) av;
-	char	s1[13] = "aarkos";
-	char	s2[13] = "Markos";
-	
-	printf("%d\n", strncmp(s1, s2, 7));
-	printf("%d\n", ft_strncmp(s1, s2, 7));
+	size_t	j;
+
+	j = 0;
+	while (s1[j] && s2[j] && j < n)
+	{
+		if (s1[j] != s2[j])
+			return (s1[j] - s2[j]);
+		j++;
+	}
 	return (0);
+
 }
