@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 13:54:12 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/12 16:46:08 by marsoare         ###   ########.fr       */
+/*   Created: 2024/04/12 16:30:04 by marsoare          #+#    #+#             */
+/*   Updated: 2024/04/12 16:55:57 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <libft.h>
-#include <bsd/string.h>
-#include <ctype.h>
+#include "libft.h"
 
-int	main(int ac, char *av[])
+char	*ft_strrchr(const char *s, int c)
 {
-	(void) ac;
-	(void) av;
-	char	s1[13] =  "Markas";
-	
-	printf("%s\n", strrchr(s1, 'a'));
-	printf("%s\n", ft_strrchr(s1, 'a'));
-	return (0);
+	size_t	len;
+	char	*p;
+
+	p = NULL;
+	len = ft_strlen(s);
+	if (*s == 0)
+		return (NULL);
+	while (len > 0)
+	{
+		if (s[len] == (char)c)
+		{
+			p = (char *)&s[len];
+			return (p);
+		}
+		len--;
+	}
+	return (NULL);
 }
