@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marsoare <marsoare@student.42porto.co      +#+  +:+       +#+        */
+/*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/10 13:46:38 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/12 12:51:45 by marsoare         ###   ########.fr       */
+/*   Created: 2024/04/12 12:48:42 by marsoare          #+#    #+#             */
+/*   Updated: 2024/04/12 12:51:32 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isalpha(int c)
+int	isdigit(int c)
 {
-	if (c >= 65 && c <= 90 || c >= 97 && c <= 122)
+	if (c >= 48 && c <= 57)
 		return (1);
 	return (0);
 }
