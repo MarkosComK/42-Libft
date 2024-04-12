@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 13:02:41 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/12 13:04:10 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/12 13:04:57 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 size_t	ft_strlen(const char *s)
 {
 	int	len;
-	while(*s)
+
+	while (*s)
 	{
 		len++;
 		s++;
