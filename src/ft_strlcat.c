@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 13:54:12 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/12 15:54:04 by marsoare         ###   ########.fr       */
+/*   Created: 2024/04/12 14:39:50 by marsoare          #+#    #+#             */
+/*   Updated: 2024/04/12 16:03:45 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <libft.h>
-#include <bsd/string.h>
-#include <ctype.h>
+#include "libft.h"
 
-int	main(int ac, char *av[])
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	(void) ac;
-	(void) av;
-	char	s1[13] =  "Markos";
-	char	s2[7] = "sokraM";
-	char	s3[13] = "Markos";
-	char	s4[7] = "sokraM";
+	size_t	i;
+	size_t	c;
+	size_t	start_len;
 
-	printf("%ld\n", strlcat(s1, s2, 5));
-	printf("%s\n", s1);
-	printf("%ld\n", ft_strlcat(s3, s4, 5));
-	printf("%s\n", s3);
-	return (0);
+	i = ft_strlen(dst);
+	c = 0;
+	start_len = ft_strlen(dst);
+	if (size == 0)
+		return (ft_strlen(src));
+	if (size <= i)
+		return (size + ft_strlen(src));
+	while (src[c] && i < size - 1)
+	{
+		dst[i] = src[c];
+		i++;
+		c++;
+	}
+	dst[i] = 0;
+	return (start_len + ft_strlen(src));
 }
