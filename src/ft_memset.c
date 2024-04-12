@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 15:32:18 by marsoare          #+#    #+#             */
-/*   Updated: 2024/02/22 13:03:08 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/12 13:08:14 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,3 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (str);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char	s[7] = "Markos";
-
-	ft_memset(s+2, '.', 1);
-	printf("after my memset(): %s", s);
-	return (0);
-}
-*/
