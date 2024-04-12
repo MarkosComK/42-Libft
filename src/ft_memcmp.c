@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 13:54:12 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/12 18:39:37 by marsoare         ###   ########.fr       */
+/*   Created: 2024/04/12 18:16:39 by marsoare          #+#    #+#             */
+/*   Updated: 2024/04/12 18:35:16 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <libft.h>
-#include <bsd/string.h>
-#include <ctype.h>
+#include "libft.h"
 
-int	main(int ac, char *av[])
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	(void) ac;
-	(void) av;
-	char	s1[13] = "Markos";
-	char	s2[13] = "Markos";
-	
-	printf("%d\n", memcmp(s1, s2, 7));
-	printf("%d\n", ft_memcmp(s1, s2, 7));
+	size_t	i;
+	unsigned char *p1;
+	unsigned char *p2;
+
+	i = 0;
+	p1 = (unsigned char *)s1;
+	p2 = (unsigned char *)s2;
+	if (n == 0)
+		return (0);
+	while (i < n)
+	{
+		if (p1[i] != p2[i])
+			return (p1[i] - p2[i]);
+		i++;
+	}
 	return (0);
 }
