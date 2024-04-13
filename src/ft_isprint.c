@@ -6,15 +6,15 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 12:58:40 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/12 13:00:54 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/13 21:01:27 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	isprint(int c)
+int	ft_isprint(int c)
 {
-	if (c >= 33 && c <= 126)
+	if (c >= 32 && c <= 126)
 		return (1);
 	return (0);
 }
