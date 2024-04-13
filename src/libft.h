@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 10:46:45 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/13 14:17:08 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/13 14:35:01 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_substr(const char *c, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 void	*ft_calloc(size_t nmemb, size_t size);
 #endif
