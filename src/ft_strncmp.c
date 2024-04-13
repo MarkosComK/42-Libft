@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 16:59:14 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/12 17:18:57 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/13 13:04:09 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,4 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		j++;
 	}
 	return (0);
-
 }
