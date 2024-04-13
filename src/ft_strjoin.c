@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 14:23:57 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/13 14:47:27 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/13 14:48:56 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (*s2)
 	{
 		endstr[i] = *s2;
-		i++;      	
+		i++;
 		s2++;
 	}
 	endstr[i] = 0;
