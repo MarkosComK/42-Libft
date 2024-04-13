@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 13:54:12 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/12 20:45:00 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/13 12:57:49 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,26 @@ int	main(int ac, char *av[])
 {
 	(void) ac;
 	(void) av;
-	const char	*s1 = "Foo Bar Baz";
-	const char	*s2 = "Bar";
-	char	*p;
-	char	*p2;
 
-	p = strnstr(s1, s2, 8);
-	p2 = ft_strnstr(s1, s2, 8);
-	
-	printf("%s\n", p);
-	printf("%s\n", p2);
+	int	i = 0;
+	int	n = 4;
+	int	*a;
+
+	a = (int *)calloc(n ,sizeof(int));
+	while(i < 4)
+	{
+		a[i] = 1;
+		printf("%d ", a[i]);
+		i++;
+	}
+	printf("now the result with ft_calloc: ");
+	i = 0;
+	a = (int *)ft_calloc(n, sizeof(int));
+	while(i < 4)
+	{
+		a[i] = 2;
+		printf("\n%d ", a[i]);
+		i++;
+	}
 	return (0);
 }
