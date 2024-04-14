@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 14:29:04 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/14 19:24:16 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/14 19:26:29 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_itoa(int n)
 		result[0] = '-';
 		nbr = -nbr;
 	}
-	while(nbr)
+	while (nbr)
 	{
 		result[len - 1] = nbr % 10 + 48;
 		nbr = nbr / 10;
@@ -45,7 +45,6 @@ char	*ft_itoa(int n)
 
 static void	handle_zero(char **result, long int *nbr)
 {
-
 	if (*nbr == 0)
 	{
 		**result = '0';
