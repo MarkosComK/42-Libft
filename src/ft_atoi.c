@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 14:46:18 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/10 14:46:22 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/14 21:36:51 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,25 @@ int	ft_atoi(const char *ptr)
 {
 	int	result;
 	int	sign;
+	int	i;
 
 	result = 0;
 	sign = 1;
-	while ((*ptr >= 9 && *ptr <= 13) || *ptr == 32)
+	i = 0;
+	while ((ptr[i] >= '\t' && ptr[i] <= '\r') || ptr[i] == ' ')
 	{
-		ptr++;
+		i++;
 	}
-	while (*ptr && (*ptr == 45 || *ptr == 43))
+	if (ptr[i] == '-' || ptr[i] == '+')
 	{
-		if (*ptr == 45)
+		if (ptr[i] == '-')
 			sign = -1;
-		ptr++;
+		i++;
 	}
-	while (*ptr && *ptr >= 48 && *ptr <= 57)
+	while (ptr[i] && ptr[i] >= 48 && ptr[i] <= 57)
 	{
-		result = result * 10 + *ptr - 48;
-		ptr++;
+		result = result * 10 + ptr[i] - 48;
+		i++;
 	}
 	return (result * sign);
 }
