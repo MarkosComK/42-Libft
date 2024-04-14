@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/21 13:54:12 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/13 14:39:14 by marsoare         ###   ########.fr       */
+/*   Created: 2024/04/13 14:49:43 by marsoare          #+#    #+#             */
+/*   Updated: 2024/04/13 15:27:28 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <libft.h>
-#include <bsd/string.h>
-#include <ctype.h>
+#include "libft.h"
 
-int	main(int ac, char *av[])
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	(void) ac;
-	(void) av;
+	char	*result;
+	int		total;
 
-	const char	*s1 = "This is an big string example";
-	const char	*s2 = " and this is the second str";
-	char		*s3;
-
-	s3 = (char *)ft_strjoin(s1, s2);
-	printf("%s", s3);
+	total = checkcases(s1, set);
 }
