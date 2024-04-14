@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 14:34:46 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/14 19:09:35 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/14 20:50:29 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 int	main(int ac, char **av)
 {
 	(void) ac;
-	int	value = ft_atoi(av[1]);
-	char	*result = ft_itoa(value);
-	printf("%s\n", result);
+	(void) av;
+	printf("%s\n", ft_strtrim("**exa*mple**a", "*"));
 	return (0);
 }
