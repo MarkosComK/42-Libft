@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: marsoare <marsoare@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/14 14:34:46 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/15 09:46:22 by marsoare         ###   ########.fr       */
+/*   Created: 2024/04/15 09:43:39 by marsoare          #+#    #+#             */
+/*   Updated: 2024/04/15 09:46:35 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
-int	main(int ac, char **av)
+void	ft_putchar_fd(char c, int fd)
 {
-	(void) ac;
-	(void) av;
-	ft_putchar_fd('a', 1);
-	return (0);
+	write(fd, &c, 1);
 }
