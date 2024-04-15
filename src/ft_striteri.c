@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/14 14:34:46 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/15 09:16:34 by marsoare         ###   ########.fr       */
+/*   Created: 2024/04/15 08:42:11 by marsoare          #+#    #+#             */
+/*   Updated: 2024/04/15 08:52:49 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
-void capitalize(unsigned int i, char *c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	(void) i;
-	*c = ft_toupper(*c);
-}
+	size_t	i;
 
-int	main(int ac, char **av)
-{
-	(void) ac;
-	(void) av;
-	char	result[] = "Hello World";
-	ft_striteri(result, capitalize);
-	printf("%s\n", result);
-	return (0);
+	i = 0;
+	while (s[i])
+	{
+		(*f)(i, &s[i]);
+		i++;
+	}
 }
