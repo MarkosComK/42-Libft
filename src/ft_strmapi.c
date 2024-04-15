@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/14 14:34:46 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/15 08:37:24 by marsoare         ###   ########.fr       */
+/*   Created: 2024/04/15 07:51:59 by marsoare          #+#    #+#             */
+/*   Updated: 2024/04/15 08:14:58 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
-char capitalize(unsigned int i, char c)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-  if (i > 0)
-    c = toupper(c);
-  return (c);
-}
+	char	*result;
+	size_t		i;
 
-int	main(int ac, char **av)
-{
-	(void) ac;
-	(void) av;
-	char	*result = ft_strmapi("Hello World", capitalize);
-	printf("%s\n", result);
-	return (0);
+	result = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
+	if (!result)
+		return (NULL);
+	i = 0;
+	while(i < ft_strlen(s))
+	{
+		result[i] = (*f)(i, s[i]);
+		i++;
+	}
+	result[i] = 0;
+	return (result);
 }
