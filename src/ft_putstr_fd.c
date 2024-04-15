@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/14 14:34:46 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/15 09:52:11 by marsoare         ###   ########.fr       */
+/*   Created: 2024/04/15 09:49:11 by marsoare          #+#    #+#             */
+/*   Updated: 2024/04/15 09:52:23 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
-int	main(int ac, char **av)
+void	ft_putstr_fd(char *s, int fd)
 {
-	(void) ac;
-	(void) av;
-	ft_putstr_fd("Why i`m i doing this?\n", 1);
-	return (0);
+	while (*s)
+	{
+		write(fd, s, 1);
+		s++;
+	}
 }
