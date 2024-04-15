@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/14 14:34:46 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/15 11:39:10 by marsoare         ###   ########.fr       */
+/*   Created: 2024/04/15 09:58:35 by marsoare          #+#    #+#             */
+/*   Updated: 2024/04/15 11:54:24 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdio.h>
-#include <ctype.h>
+#include "libft.h"
 
-int	main(int ac, char **av)
+void	ft_putnbr_fd(int n, int fd)
 {
-	(void) ac;
-	(void) av;
-	ft_putnbr_fd(13, 1);
-	return (0);
+	long	nb;
+
+	nb = n;
+	if (nb < 0)
+	{
+		ft_putchar_fd('-', fd);
+		nb = nb * -1;
+	}
+	if (nb > 9)
+	{
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putnbr_fd(nb % 10, fd);
+	}
+	else
+		ft_putchar_fd(nb + 48, fd);
 }
