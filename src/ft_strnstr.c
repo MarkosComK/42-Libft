@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 20:10:47 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/14 22:38:54 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:08:20 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	size_t	strlen;
 
 	strlen = ft_strlen(little);
-	if ((!*little && !*big) || !*little)
+	if (!*little)
 		return ((char *)big);
-	if (strlen > len)
-		return (NULL);
 	while (big && len > 0)
 	{
 		if (!(ft_strncmp(big, little, strlen)) && len >= strlen)
