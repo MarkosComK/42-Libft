@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/12 16:30:04 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/12 16:55:57 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/16 13:19:30 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	size_t	len;
+	int		len;
 	char	*p;
 
 	p = NULL;
-	len = ft_strlen(s);
-	if (*s == 0)
-		return (NULL);
-	while (len > 0)
+	len = (int)ft_strlen(s);
+	while (len >= 0)
 	{
 		if (s[len] == (char)c)
 		{
@@ -30,5 +28,5 @@ char	*ft_strrchr(const char *s, int c)
 		}
 		len--;
 	}
-	return (NULL);
+	return (p);
 }
