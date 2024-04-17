@@ -6,11 +6,12 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 14:49:43 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/14 21:12:03 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/17 15:41:59 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -20,22 +21,35 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*result;
 
 	i = 0;
-	j = 0;
+	j = ft_strlen(s1) - 1;
 	k = 0;
+	if (!s1 || !set)
+		return (ft_strdup(""));
 	while (ft_strchr(set, (int)s1[i]))
 		i++;
-	while (s1[i + j])
-		j++;
 	while (ft_strrchr(set, (int)s1[j]))
 		j--;
-	result = (char *)malloc(sizeof(char) * (j + 1));
-	if (!result || !s1 || !set)
+	result = (char *)malloc(sizeof(char) * (j + 2));
+	if (!result)
 		return (NULL);
-	while (j > 0)
-	{
-		result[k++] = s1[i++];
-		j--;
-	}
-	result[k] = 0;
-	return (result);
+	return(ft_substr(s1, i, j-i+1));
 }
+/*
+static char	*ft_strndup(const char *s, int start, int end)
+{
+	char	*dup;
+	int		i;
+
+	dup = (char *)malloc(sizeof(char) * (end - start + 1));
+	if (!dup)
+		return (NULL);
+	i = 0;
+	while (start < end)
+	{
+		dup[i] = s[start];
+		i++;
+		start++;
+	}
+	dup[i] = 0;
+	return (dup);
+}*/
