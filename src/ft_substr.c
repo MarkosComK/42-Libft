@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 13:14:58 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/13 14:21:55 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/19 12:19:00 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *c, unsigned int start, size_t len)
 	char	*subs;
 	size_t	i;
 
+	if (start > ft_strlen(c))
+		return (ft_strdup(""));
 	subs = (char *)malloc(sizeof(char) * len + 1);
 	if (subs == 0)
 		return (NULL);
