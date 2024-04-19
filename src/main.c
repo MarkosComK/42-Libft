@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 14:34:46 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/17 15:16:50 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/19 11:30:49 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(int ac, char **av)
 	}
 	//printf("Mine: %s", ft_split("xxxxxxxxhello!", 'x'));
 	*/
-	printf("%s", ft_strtrim("   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ", " \n\t"));
+	printf("%s", ft_strtrim("This is not trimed!\n*ab   ", " \n*ab"));
 	return (0);
 }
 

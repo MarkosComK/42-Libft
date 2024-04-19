@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 14:49:43 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/17 15:41:59 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/19 11:35:24 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	result = (char *)malloc(sizeof(char) * (j + 2));
 	if (!result)
 		return (NULL);
-	return(ft_substr(s1, i, j-i+1));
+	return (ft_substr(s1, i, j - i + 1));
 }
 /*
 static char	*ft_strndup(const char *s, int start, int end)
