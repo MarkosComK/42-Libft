@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 15:28:13 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/19 13:20:46 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:45:27 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ char	**ft_split(char const *s, char c)
 			j++;
 			i += word_len(&s[i], c);
 		}
-		i++;
+		else
+			i++;
 	}
 	result[j] = 0;
 	return (result);
