@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 14:49:43 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/19 11:38:52 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/19 12:09:41 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		i;
 	int		j;
 	int		k;
-	char	*result;
 
 	i = 0;
-	j = ft_strlen(s1) - 1;
 	k = 0;
-	if (!s1 || !set)
+	if (!s1 || !set || s1[0] == '\0')
 		return (ft_strdup(""));
+	j = ft_strlen(s1) - 1;
 	while (ft_strchr(set, (int)s1[i]))
 		i++;
 	while (ft_strrchr(set, (int)s1[j]))
 		j--;
-	result = (char *)malloc(sizeof(char) * (j + 2));
-	if (!result)
-		return (NULL);
 	return (ft_substr(s1, i, j - i + 1));
 }
 /*
