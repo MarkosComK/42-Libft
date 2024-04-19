@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 14:34:46 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/19 13:43:28 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:31:07 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int ac, char **av)
 
 	(void) ac;
 	(void) av;
-	str = ft_split("me  !       ", ' ');
+	str = ft_split("hello!", ' ');
 	i = 0;
 	while (str[i])
 	{
