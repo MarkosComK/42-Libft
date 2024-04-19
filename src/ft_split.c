@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 15:28:13 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/14 21:13:52 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/17 13:34:47 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		words_count(char const *str, char c);
 int		words_len(char const *str, char c);
-char	*ft_strdup(const char *s, int start, int end);
+char	*ft_strndup(const char *s, int start, int end);
 char	**ft_free(char **strs, int count);
 
 char	**ft_split(char const *s, char c)
@@ -25,7 +25,7 @@ char	**ft_split(char const *s, char c)
 	int		j;
 
 	result = ft_calloc((words_count(s, c) + 1), sizeof(char *));
-	if (!result || !s || !c)
+	if (!result)
 		return (NULL);
 	i = 0;
 	j = 0;
@@ -34,7 +34,7 @@ char	**ft_split(char const *s, char c)
 	{
 		if (s[i] == c || s[i] == 0)
 		{
-			result[j++] = ft_strdup(s, word_start, i);
+			result[j++] = ft_strndup(s, word_start, i);
 			word_start = i + 1;
 			if (!result)
 				return (ft_free(result, j));
@@ -58,7 +58,7 @@ char	**ft_free(char **strs, int count)
 	return (NULL);
 }
 
-char	*ft_strdup(const char *s, int start, int end)
+char	*ft_strndup(const char *s, int start, int end)
 {
 	char	*dup;
 	int		i;
