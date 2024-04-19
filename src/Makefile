@@ -15,14 +15,18 @@ NAME = libft.a
 #	$(CC) -c -o $@ $< $(CFLAGS)
 
 $(NAME): $(FUNCS)
-	$(CC) -o $(NAME) $(FUNCS) $(CFLAGS)
+	@$(CC) -o $(NAME) $(FUNCS) $(CFLAGS)
+	@echo "COMPILATION \033[32mSUCCESS"
 
 all: $(NAME)
 
 clean:
-	rm -f *.o
+	@rm -f *.o
+	@echo "\033[30m*.o \033[31mDELETED"
 
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@echo "\033[30mlibft.a \033[31mDELETED"
 
 re: fclean all
+
