@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 15:28:13 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/19 13:19:49 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/19 13:20:46 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int		words_count(char const *str, char c);
 static int		word_len(char const *str, char c);
-static char	**ft_free(char **strs, int count);
+static char		**ft_free(char **strs, int count);
 
 char	**ft_split(char const *s, char c)
 {
@@ -96,7 +96,7 @@ static int	word_len(char const *str, char c)
 			len++;
 		}
 		else if (str[i] == c)
-			break;
+			break ;
 		i++;
 	}
 	return (len);
