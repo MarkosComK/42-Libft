@@ -6,21 +6,19 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 15:28:13 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/17 13:34:47 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/19 13:19:49 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		words_count(char const *str, char c);
-int		words_len(char const *str, char c);
-char	*ft_strndup(const char *s, int start, int end);
-char	**ft_free(char **strs, int count);
+static int		words_count(char const *str, char c);
+static int		word_len(char const *str, char c);
+static char	**ft_free(char **strs, int count);
 
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
-	int		word_start;
 	int		i;
 	int		j;
 
@@ -29,22 +27,23 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	i = 0;
 	j = 0;
-	word_start = 0;
-	while (s[i++])
+	while (s[i])
 	{
-		if (s[i] == c || s[i] == 0)
+		if (s[i] != c)
 		{
-			result[j++] = ft_strndup(s, word_start, i);
-			word_start = i + 1;
-			if (!result)
+			result[j] = ft_substr(s, i, word_len(&s[i], c));
+			if (!result[j])
 				return (ft_free(result, j));
+			j++;
+			i += word_len(&s[i], c);
 		}
+		i++;
 	}
 	result[j] = 0;
 	return (result);
 }
 
-char	**ft_free(char **strs, int count)
+static char	**ft_free(char **strs, int count)
 {
 	int	i;
 
@@ -58,32 +57,15 @@ char	**ft_free(char **strs, int count)
 	return (NULL);
 }
 
-char	*ft_strndup(const char *s, int start, int end)
-{
-	char	*dup;
-	int		i;
-
-	dup = (char *)malloc(sizeof(char) * (end - start + 1));
-	if (!dup)
-		return (NULL);
-	i = 0;
-	while (start < end)
-	{
-		dup[i] = s[start];
-		i++;
-		start++;
-	}
-	dup[i] = 0;
-	return (dup);
-}
-
-int	words_count(char const *str, char c)
+static int	words_count(char const *str, char c)
 {
 	int	count;
 	int	x;
 
 	count = 0;
 	x = 0;
+	while (*str == c)
+		str++;
 	while (*str)
 	{
 		if (*str != c && x == 0)
@@ -100,7 +82,7 @@ int	words_count(char const *str, char c)
 	return (count);
 }
 
-int	words_len(char const *str, char c)
+static int	word_len(char const *str, char c)
 {
 	int	len;
 	int	i;
@@ -113,6 +95,8 @@ int	words_len(char const *str, char c)
 		{
 			len++;
 		}
+		else if (str[i] == c)
+			break;
 		i++;
 	}
 	return (len);
