@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 10:46:45 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/20 16:10:11 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/20 17:31:46 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,5 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
 #endif
