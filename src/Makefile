@@ -39,6 +39,7 @@ FUNCS = ft_isalnum.c \
 	ft_lstnew.c\
 	ft_lstadd_front.c\
 	ft_lstsize.c\
+	ft_lstlast.c\
 	main.c
 NAME = libft.a
 
