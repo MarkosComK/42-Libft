@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 14:49:43 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/19 12:09:41 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/20 10:22:20 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		j;
-	int		k;
 
 	i = 0;
-	k = 0;
 	if (!s1 || !set || s1[0] == '\0')
 		return (ft_strdup(""));
 	j = ft_strlen(s1) - 1;
