@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 14:34:46 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/19 17:31:07 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/20 16:50:12 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,33 @@
 #include <ctype.h>
 #include <string.h>
 
+void	printlist(t_list *head)
+{
+	while (head != NULL)
+	{
+		printf("%s - ", (char *)head->content);
+		head = head->next; 
+	}
+	printf("\n");
+}
+
 int	main(int ac, char **av)
 {
-	char	**str;
-	int		i;
-
 	(void) ac;
 	(void) av;
-	str = ft_split("hello!", ' ');
-	i = 0;
-	while (str[i])
-	{
-		printf("ARR: %s \n", str[i]);
-		i++;
-	}
+	
+	t_list *n1, *n2, *n3;
+	n1 = malloc(sizeof(t_list));
+	n2 = malloc(sizeof(t_list));
+	n3 = ft_lstnew(NULL);
+
+	n1->content = "1";
+	n2->content = "2";
+
+	n1->next = n2;
+	n2->next = n3;
+	n3->next = 0;
+
+	printlist(n1);
 	return (0);
 }
