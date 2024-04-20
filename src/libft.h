@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 10:46:45 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/19 17:00:53 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/20 16:10:11 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-
 //FUNCTIONS FROM <ctype.h>
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
@@ -56,4 +55,11 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+//BONUS
+typedef struct	s_list
+{
+	void			*content;
+	struct s_list	*next;
+}				t_list;
+t_list	*ft_lstnew(void *content);
 #endif
