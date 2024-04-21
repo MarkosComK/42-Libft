@@ -1,14 +1,10 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: roramos <roramos@student.42.fr>            +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/10/11 19:49:39 by roramos           #+#    #+#              #
-#    Updated: 2024/04/21 22:37:56 by marsoare         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+# COLORS
+RED    = $(shell printf "\33[31m")
+GREEN  = $(shell printf "\33[32m")
+WHITE  = $(shell printf "\33[37m")
+YELLOW = $(shell printf "\33[33m")
+RESET  = $(shell printf "\33[0m")
+BLUE = $(shell printf "\33[34m")
 
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror -g
@@ -24,13 +20,16 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c\
     ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c 
 OBJS = ${SRCS:.c=.o}
 
-.c.o:
-	@${COMPILER} ${CFLAGS} -c $< -o $@
 
 ${NAME}: ${OBJS}
-	ar rcs ${NAME} ${OBJS}
+	@ar rcs ${NAME} ${OBJS}
+	@echo "\033[90m[\033[32mSuccess\033[90m]\033[32m Successfully compiled Libft.\033[0m"
 
-all: ${NAME}
+.c.o:
+	@${COMPILER} ${CFLAGS} -c $< -o $@
+	@echo "$(RESET)[$(GREEN)OK$(RESET)]$(BLUE) Compiling $<$(YELLOW)"
+
+all: ascii-art $(NAME)
 
 clean:
 	rm -rf *.o
