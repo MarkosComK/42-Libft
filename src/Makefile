@@ -5,6 +5,8 @@ WHITE  = $(shell printf "\33[37m")
 YELLOW = $(shell printf "\33[33m")
 RESET  = $(shell printf "\33[0m")
 BLUE = $(shell printf "\33[34m")
+PURPLE = $(shell printf "\33[35m")
+TITLE = $(shell printf "\33[32;40m")
 
 NAME = libft.a
 CFLAGS = -Wall -Wextra -Werror -g
@@ -23,13 +25,29 @@ OBJS = ${SRCS:.c=.o}
 
 ${NAME}: ${OBJS}
 	@ar rcs ${NAME} ${OBJS}
-	@echo "\033[90m[\033[32mSuccess\033[90m]\033[32m Successfully compiled Libft.\033[0m"
+	@clear
+	@echo
+	@echo
+	@echo "$(TITLE)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+	@echo "  _/  _/         _/_/        _/         _/       _/             _/_/      _/      "
+	@echo " _/  _/       _/    _/      _/                  _/_/_/       _/        _/_/_/_/   "
+	@echo "_/_/_/_/         _/        _/         _/       _/    _/   _/_/_/_/      _/        "
+	@echo "   _/         _/          _/         _/       _/    _/     _/          _/         "
+	@echo "  _/       _/_/_/_/      _/_/_/_/   _/       _/_/_/       _/            _/_/      "
+	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━[$(RESET)Made with $(RED)♥ $(RESET)by $(PURPLE)@marsoare$(RESET)━"
+	@echo
+	@echo
+	@echo "$(GREEN) Successfully compiled Libft."
+	@echo
+	@echo
 
 .c.o:
 	@${COMPILER} ${CFLAGS} -c $< -o $@
+	@sleep 0.02
+	@clear
 	@echo "$(RESET)[$(GREEN)OK$(RESET)]$(BLUE) Compiling $<$(YELLOW)"
 
-all: ascii-art $(NAME)
+all: $(NAME)
 
 clean:
 	rm -rf *.o
