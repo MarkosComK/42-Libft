@@ -56,9 +56,9 @@ $(NAME): $(FUNCS)
 	@echo "\033[34m╔══════════════════════════════════════════════════════════════╗"
 	@echo "\033[34m║                     \033[32mMAKEFILE IS RUNNING!                     \033[34m║"
 	@echo "\033[34m╚══════════════════════════════════════════════════════════════╝"
+	@echo "COMPILATION \033[32mSUCCESS"
 
 	@$(CC) -o $(NAME) $(FUNCS) $(CFLAGS)
-	@echo "COMPILATION \033[32mSUCCESS"
 
 all: $(NAME)
 
