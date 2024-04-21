@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/14 14:34:46 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/21 20:43:58 by marsoare         ###   ########.fr       */
+/*   Created: 2024/04/21 15:19:01 by marsoare          #+#    #+#             */
+/*   Updated: 2024/04/21 15:34:22 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
+#include "libft.h"
 
-int	main()
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	char	*s = "string";
-
-	char	*str = (char *)ft_memmove(s+1, s, ft_strlen(s));
-	printf("%s", str);
+	while (lst)
+	{
+		f(lst -> content);
+		lst = lst -> next;
+	}
 }

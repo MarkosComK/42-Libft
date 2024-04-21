@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: marsoare <marsoare@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/14 14:34:46 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/21 20:43:58 by marsoare         ###   ########.fr       */
+/*   Created: 2024/04/21 11:52:59 by marsoare          #+#    #+#             */
+/*   Updated: 2024/04/21 13:20:22 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
+#include "libft.h"
 
-int	main()
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	char	*s = "string";
-
-	char	*str = (char *)ft_memmove(s+1, s, ft_strlen(s));
-	printf("%s", str);
+	if (!lst)
+		return ;
+	del(lst -> content);
+	free(lst);
 }

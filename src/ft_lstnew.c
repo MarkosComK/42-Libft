@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/14 14:34:46 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/21 20:43:58 by marsoare         ###   ########.fr       */
+/*   Created: 2024/04/20 16:04:12 by marsoare          #+#    #+#             */
+/*   Updated: 2024/04/20 17:24:14 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
+#include "libft.h"
 
-int	main()
+t_list	*ft_lstnew(void *content)
 {
-	char	*s = "string";
+	t_list	*lstnew;
 
-	char	*str = (char *)ft_memmove(s+1, s, ft_strlen(s));
-	printf("%s", str);
+	lstnew = (t_list *)malloc(sizeof(t_list));
+	if (!lstnew)
+		return (NULL);
+	lstnew -> content = content;
+	lstnew -> next = 0;
+	return (lstnew);
 }
