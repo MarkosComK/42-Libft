@@ -29,6 +29,8 @@
 
 # Great Resources for Libft
 
+[42-Gitbook](https://42-cursus.gitbook.io/guide)
+
 [Libft functions](https://www.asidesigned.com/project-libft.html) 
 
 [Learn C](https://www.learn-c.org/)
