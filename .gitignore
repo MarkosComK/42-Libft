@@ -1,4 +1,4 @@
 *.o
 *.swp
 .gitignore
-main.c
+main.c 
