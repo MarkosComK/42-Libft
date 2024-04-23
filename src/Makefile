@@ -34,7 +34,7 @@ ${NAME}: ${OBJS}
 	@echo "_/_/_/_/         _/        _/         _/       _/    _/   _/_/_/_/      _/        "
 	@echo "   _/         _/          _/         _/       _/    _/     _/          _/         "
 	@echo "  _/       _/_/_/_/      _/_/_/_/   _/       _/_/_/       _/            _/_/      "
-	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━[$(RESET)Made with $(RED)♥ $(RESET)by $(PURPLE)@marsoare$(RESET)━"
+	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[$(RESET)Made with $(RED)♥ $(RESET)by $(PURPLE)@marsoare$(TITLE)]━━"
 	@echo
 	@echo
 	@echo "$(GREEN) Successfully compiled Libft."
