@@ -51,9 +51,21 @@ all: $(NAME)
 
 clean:
 	rm -rf *.o
+	@clear
+	@echo
+	@echo "$(RED)┏┓┓ ┏┓┏┓┳┓┏┓┳┓"
+	@echo "┃ ┃ ┣ ┣┫┃┃┣ ┃┃"
+	@echo "┗┛┗┛┗┛┛┗┛┗┗┛┻┛"
+	@echo
 
 fclean: clean
 	rm -f ${NAME}
+	@clear
+	@echo
+	@echo "$(RED)┏┓┓ ┏┓┏┓┳┓┏┓┳┓"
+	@echo "┃ ┃ ┣ ┣┫┃┃┣ ┃┃"
+	@echo "┗┛┗┛┗┛┛┗┛┗┗┛┻┛"
+	@echo
 
 re: fclean all
 
