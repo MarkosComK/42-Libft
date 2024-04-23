@@ -148,23 +148,11 @@ and, when compiling your code, add the required flags:
 
 ## 📋 Testing
 
-**1. First, configure the path to the libft folder in the Makefile (inside `/testing/`):**
-
-```Makefile
-#############################
-## Path to Libft directory ##
-#############################
-DIR		= ../
-```
-
-**2. Then run:**
-
-```shell
-make t
-```
+**1. I haven`t coded a tester yet, but you can make your own test for each function. Here some third party testers that you can use.**
 
 ### Third-party testers
 
+* [xicodomingues/francinette](https://github.com/xicodomingues/francinette)
 * [jtoty/Libftest](https://github.com/jtoty/Libftest)
 * [alelievr/libft-unit-test](https://github.com/alelievr/libft-unit-test)
 * [Night-squad/libft-war-machine-v2019](https://github.com/Night-squad/libft-war-machine-v2019)
