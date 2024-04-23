@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 15:28:13 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/19 17:45:27 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/23 13:08:36 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ static char		**ft_free(char **strs, int count);
 
 char	**ft_split(char const *s, char c)
 {
-	char	**result;
-	int		i;
-	int		j;
-
+	auto char **result;
+	auto int i, j;
+	if (!s)
+		return (NULL);
 	result = ft_calloc((words_count(s, c) + 1), sizeof(char *));
 	if (!result)
 		return (NULL);
@@ -62,23 +62,25 @@ static int	words_count(char const *str, char c)
 {
 	int	count;
 	int	x;
+	int	i;
 
 	count = 0;
 	x = 0;
-	while (*str == c)
-		str++;
-	while (*str)
+	i = 0;
+	while (str[i] == c)
+		i++;
+	while (str[i])
 	{
-		if (*str != c && x == 0)
+		if (str[i] != c && x == 0)
 		{
 			count++;
 			x = 1;
 		}
-		else if (*str == c)
+		else if (str[i] == c)
 		{
 			x = 0;
 		}
-		str++;
+		i++;
 	}
 	return (count);
 }
