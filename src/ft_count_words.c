@@ -6,13 +6,13 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 23:40:31 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/25 23:41:23 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/25 23:43:07 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	words_count(char const *str, const char delim)
+int	ft_count_words(char const *str, const char delim)
 {
 	int	count;
 	int	x;
@@ -21,16 +21,16 @@ int	words_count(char const *str, const char delim)
 	count = 0;
 	x = 0;
 	i = 0;
-	while (str[i] == c)
+	while (str[i] == delim)
 		i++;
 	while (str[i])
 	{
-		if (str[i] != c && x == 0)
+		if (str[i] != delim && x == 0)
 		{
 			count++;
 			x = 1;
 		}
-		else if (str[i] == c)
+		else if (str[i] == delim)
 		{
 			x = 0;
 		}
