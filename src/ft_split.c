@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 15:28:13 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/25 23:42:17 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/25 23:49:59 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	**ft_split(char const *s, char c)
 	auto int i, j;
 	if (!s)
 		return (NULL);
-	result = ft_calloc((words_count(s, c) + 1), sizeof(char *));
+	result = ft_calloc((ft_count_words(s, c) + 1), sizeof(char *));
 	if (!result)
 		return (NULL);
 	i = 0;
