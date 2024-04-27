@@ -29,12 +29,12 @@ ${NAME}: ${OBJS}
 	@echo
 	@echo
 	@echo "$(TITLE)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-	@echo "  _/  _/         _/_/        _/         _/       _/             _/_/      _/      "
+	@echo "$(PURPLE)  _/  _/         _/_/        _/         _/       _/             _/_/      _/      "
 	@echo " _/  _/       _/    _/      _/                  _/_/_/       _/        _/_/_/_/   "
 	@echo "_/_/_/_/         _/        _/         _/       _/    _/   _/_/_/_/      _/        "
 	@echo "   _/         _/          _/         _/       _/    _/     _/          _/         "
 	@echo "  _/       _/_/_/_/      _/_/_/_/   _/       _/_/_/       _/            _/_/      "
-	@echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[$(RESET)Made with $(RED)♥ $(RESET)by $(PURPLE)@marsoare$(TITLE)]━━"
+	@echo "$(GREEN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[$(RESET)Made with $(RED)♥ $(RESET)by $(PURPLE)@marsoare$(TITLE)]━━"
 	@echo
 	@echo
 	@echo "$(GREEN) Successfully compiled Libft."
