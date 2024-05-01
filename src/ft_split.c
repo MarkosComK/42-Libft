@@ -6,22 +6,23 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/13 15:28:13 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/25 23:49:59 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:45:27 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int		words_count(char const *str, char c);
 static int		word_len(char const *str, char c);
 static char		**ft_free(char **strs, int count);
 
 char	**ft_split(char const *s, char c)
 {
-	auto char **result;
-	auto int i, j;
-	if (!s)
-		return (NULL);
-	result = ft_calloc((ft_count_words(s, c) + 1), sizeof(char *));
+	char	**result;
+	int		i;
+	int		j;
+
+	result = ft_calloc((words_count(s, c) + 1), sizeof(char *));
 	if (!result)
 		return (NULL);
 	i = 0;
@@ -55,6 +56,31 @@ static char	**ft_free(char **strs, int count)
 	}
 	free(strs);
 	return (NULL);
+}
+
+static int	words_count(char const *str, char c)
+{
+	int	count;
+	int	x;
+
+	count = 0;
+	x = 0;
+	while (*str == c)
+		str++;
+	while (*str)
+	{
+		if (*str != c && x == 0)
+		{
+			count++;
+			x = 1;
+		}
+		else if (*str == c)
+		{
+			x = 0;
+		}
+		str++;
+	}
+	return (count);
 }
 
 static int	word_len(char const *str, char c)

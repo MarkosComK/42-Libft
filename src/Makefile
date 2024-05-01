@@ -1,73 +1,50 @@
-# COLORS
-RED    = $(shell printf "\33[31m")
-GREEN  = $(shell printf "\33[32m")
-WHITE  = $(shell printf "\33[37m")
-YELLOW = $(shell printf "\33[33m")
-RESET  = $(shell printf "\33[0m")
-BLUE = $(shell printf "\33[34m")
-PURPLE = $(shell printf "\33[35m")
-TITLE = $(shell printf "\33[32;40m")
+# Color Aliases
+#DEFAULT = \033[0;39m
+#GRAY = \033[0;90m
+#RED = \033[0;91m
+#GREEN = \033[0;92m
+#YELLOW = \033[0;93m
+#BLUE = \033[0;94m
+#MAGENTA = \033[0;95m
+#CYAN = \033[0;96m
+#WHITE = \033[0;97m
 
 NAME = libft.a
-CFLAGS = -Wall -Wextra -Werror -g
-COMPILER = cc
-SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c\
-    ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memchr.c\
-    ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c ft_putchar_fd.c\
-    ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c\
-    ft_strchr.c ft_strdup.c ft_striteri.c ft_count_words.c ft_strjoin.c ft_strlcat.c\
-    ft_strlcpy.c ft_strlen.c ft_strmapi.c ft_strncmp.c ft_strnstr.c\
-    ft_strrchr.c ft_strtrim.c ft_tolower.c ft_toupper.c ft_substr.c\
-	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\
-    ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c\
-	ft_putchar.c ft_putstr.c ft_putnbr.c
-OBJS = ${SRCS:.c=.o}
+SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
+		ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
+		ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
+		ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
+		ft_atoi.c ft_calloc.c ft_strdup.c \
+		ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
+		ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+SRCS_BONUS = \
+			 ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+			 ft_lstdelone.c ft_lstadd_back.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+OBJS = $(SRCS:.c=.o)
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
-
-${NAME}: ${OBJS}
-	@ar rcs ${NAME} ${OBJS}
-	@clear
-	@echo
-	@echo
-	@echo "$(TITLE)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-	@echo "$(PURPLE)  _/  _/         _/_/        _/         _/       _/             _/_/      _/      "
-	@echo " _/  _/       _/    _/      _/                  _/_/_/       _/        _/_/_/_/   "
-	@echo "_/_/_/_/         _/        _/         _/       _/    _/   _/_/_/_/      _/        "
-	@echo "   _/         _/          _/         _/       _/    _/     _/          _/         "
-	@echo "  _/       _/_/_/_/      _/_/_/_/   _/       _/_/_/       _/            _/_/      "
-	@echo "$(GREEN)━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[$(RESET)Made with $(RED)♥ $(RESET)by $(PURPLE)@marsoare$(TITLE)]━━"
-	@echo
-	@echo
-	@echo "$(GREEN) Successfully compiled Libft."
-	@echo
-	@echo
-
-.c.o:
-	@${COMPILER} ${CFLAGS} -c $< -o $@
-	@sleep 0.02
-	@clear
-	@echo "$(RESET)[$(GREEN)OK$(RESET)]$(BLUE) Compiling $<$(YELLOW)"
+CC = clang
+CFLAGS = -Wall -Wextra -Werror
+ARFLAGS = ar -rcs
+RM = rm -rf
 
 all: $(NAME)
 
+$(NAME): $(OBJS)
+	$(ARFLAGS) $(NAME) $(OBJS)
+
+%.o%.c:
+	$(CC) $(CFLAGS) -c $< -o $@
+
+bonus: $(OBJS) $(OBJS_BONUS)
+	$(ARFLAGS) $(NAME) $(OBJS) $(OBJS_BONUS)
+
 clean:
-	rm -rf *.o
-	@clear
-	@echo
-	@echo "$(RED)┏┓┓ ┏┓┏┓┳┓┏┓┳┓"
-	@echo "┃ ┃ ┣ ┣┫┃┃┣ ┃┃"
-	@echo "┗┛┗┛┗┛┛┗┛┗┗┛┻┛"
-	@echo
+	$(RM) $(OBJS) $(OBJS_BONUS)
 
 fclean: clean
-	rm -f ${NAME}
-	@clear
-	@echo
-	@echo "$(RED)┏┓┓ ┏┓┏┓┳┓┏┓┳┓"
-	@echo "┃ ┃ ┣ ┣┫┃┃┣ ┃┃"
-	@echo "┗┛┗┛┗┛┛┗┛┗┗┛┻┛"
-	@echo
+	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re test
+.PHONY: all, clean, fclean, re, bonus
