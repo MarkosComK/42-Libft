@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 14:16:25 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/28 14:17:52 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/05/10 19:18:36 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	ft_putchar(int c)
 {
+	if (!c)
+		return (NULL);
 	write(1, &c, 1);
 	return (1);
 }
