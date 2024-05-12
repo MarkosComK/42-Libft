@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 10:46:45 by marsoare          #+#    #+#             */
-/*   Updated: 2024/04/28 14:34:35 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/05/12 19:09:23 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "./printf/ft_printf.h"
 //FUNCTIONS FROM <stdio.h>
 int		ft_putchar(int c);
 //FUNCTIONS FROM <ctype.h>
