@@ -5,7 +5,7 @@
 ![Image](https://github.com/MarkosComK/42-Libft/assets/67120870/f96b6b0c-edac-48fc-91f6-eebcc4c5652d)
 <p align="center">
 	<b><i>Development repo for 42cursus libft project</i></b><br>
-	For further information about 42cursus and its projects, please refer to <a href="https://github.com/appinha/42cursus"><b>42cursus repo</b></a>.
+	For further information about 42cursus and its projects, please refer to <a href="https://github.com/MarkosComK/42-Common-Core-Guide"><b>42-Common-Core-Guide repo</b></a>.
 </p>
 
 
