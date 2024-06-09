@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 17:07:48 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/09 19:45:28 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/09 20:13:43 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,10 @@
 char	*get_next_line(int fd);
 char	*get_read(int fd, char *backup);
 char	*get_line(char *backup);
-static char	*ft_strchr(char *s, int c);
-static void	*ft_calloc(size_t nmemb, size_t size);
-static char	*ft_strjoin(char *s1, char *s2);
-static size_t	ft_strlen(char *s);
-static char	*ft_strdup(char *s);
+char	*get_strchr(char *s, int c);
+void	*get_calloc(size_t nmemb, size_t size);
+char	*get_strjoin(char *s1, char *s2);
+size_t	get_strlen(char *s);
 char	*get_rest(char *backup);
 
 #endif

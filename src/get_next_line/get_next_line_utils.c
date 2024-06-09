@@ -6,13 +6,13 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 18:20:28 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/09 19:44:23 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/09 20:12:45 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char	*ft_strjoin(char *s1, char *s2)
+ char	*get_strjoin(char *s1, char *s2)
 {
 	char		*endstr;
 	size_t		totlen;
@@ -36,7 +36,7 @@ static char	*ft_strjoin(char *s1, char *s2)
 	return (endstr);
 }
 
-static size_t	ft_strlen(char *s)
+size_t	get_strlen(char *s)
 {
 	size_t	size;
 
@@ -46,7 +46,7 @@ static size_t	ft_strlen(char *s)
 	return (size);
 }
 
-static char	*ft_strchr(char *s, int c)
+char	*get_strchr(char *s, int c)
 {
 	if (!s)
 		return (0);
@@ -61,7 +61,7 @@ static char	*ft_strchr(char *s, int c)
 	return (NULL);
 }
 
-static void	*ft_calloc(size_t nmemb, size_t size)
+void	*get_calloc(size_t nmemb, size_t size)
 {
 	unsigned char	*p;
 	size_t			i;
