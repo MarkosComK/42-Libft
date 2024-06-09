@@ -25,7 +25,7 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c\
 	./printf/print_ptr.c ./printf/print_ptr_hex.c\
 	./printf/ptr_len.c ./printf/print_decimal.c ./printf/print_unsigned_dec.c\
 	./printf/print_dec_width2.c ./printf/numlen.c ./printf/print_dec_wz.c\
-	./printf/print_dec_wp2.c ./printf/print_hexa.c\
+	./printf/print_dec_wp2.c ./printf/print_hexa.c
 OBJS = ${SRCS:.c=.o}
 
 
