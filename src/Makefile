@@ -58,6 +58,8 @@ all: $(NAME)
 
 clean:
 	rm -rf *.o
+	rm -rf printf/*.o
+	rm -rf get_next_line/*.o
 	@clear
 	@echo
 	@echo "$(RED)┏┓┓ ┏┓┏┓┳┓┏┓┳┓"
