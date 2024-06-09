@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/11 18:20:28 by marsoare          #+#    #+#             */
-/*   Updated: 2024/06/09 21:05:47 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/06/09 21:16:43 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ char	*get_strjoin(char *s1, char *s2)
 	int			i;
 	int			j;
 
-	totlen = ft_strlen(s1) + ft_strlen(s2);
-	endstr = ft_calloc(sizeof(char), (totlen + 1));
+	totlen = get_strlen(s1) + get_strlen(s2);
+	endstr = get_calloc(sizeof(char), (totlen + 1));
 	if (!endstr)
 		return (NULL);
 	i = 0;
