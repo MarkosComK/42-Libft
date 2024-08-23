@@ -12,35 +12,37 @@
 
 #include "libft.h"
 
-static int		word_len(char const *str, char c);
+static char		*word_get(char const *str, char c, int *i, int *in_quotes);
 static char		**ft_free(char **strs, int count);
+static char		*ft_strdupword(char const *str, int len);
 
 char	**ft_split(char const *s, char c)
 {
-	auto char **result;
-	auto int i, j;
-	if (!s)
-		return (NULL);
-	result = ft_calloc((ft_count_words(s, c) + 1), sizeof(char *));
-	if (!result)
-		return (NULL);
+	char	**result;
+	int		i;
+	int		j;
+	int		iq;
+
+	result = NULL;
 	i = 0;
 	j = 0;
-	while (s[i])
+	iq = 0;
+	result = ft_calloc((ft_count_words(s, c) + 1), sizeof(char *));
+	if (!result || !s)
+		return (NULL);
+	while (s[i] && j < ft_count_words(s, c))
 	{
-		if (s[i] != c)
-		{
-			result[j] = ft_substr(s, i, word_len(&s[i], c));
-			if (!result[j])
-				return (ft_free(result, j));
-			j++;
-			i += word_len(&s[i], c);
-		}
-		else
+		if ((s[i] == c && !iq) || (s[i] == '\'' && s[i + 1] == '\''))
 			i++;
+		else
+		{
+			result[j] = word_get(s, c, &i, &iq);
+			if (!result)
+				return (ft_free(result, j), NULL);
+			j++;
+		}
 	}
-	result[j] = 0;
-	return (result);
+	return (result[j] = NULL, result);
 }
 
 static char	**ft_free(char **strs, int count)
@@ -57,22 +59,52 @@ static char	**ft_free(char **strs, int count)
 	return (NULL);
 }
 
-static int	word_len(char const *str, char c)
+static char	*word_get(char const *str, char c, int *i, int *in_quotes)
 {
+	int	start;
 	int	len;
-	int	i;
 
+	start = *i;
 	len = 0;
-	i = 0;
-	while (str[i])
+	while (str[*i])
 	{
-		if (str[i] != c)
+		if (str[*i] == '\'' && !(*in_quotes))
 		{
-			len++;
+			*in_quotes = 1;
+			if ((*i)++ | len++)
+				continue ;
 		}
-		else if (str[i] == c)
+		if (str[*i] == '\'' && *in_quotes)
+		{
+			*in_quotes = 0;
+			if ((*i)++ | len++)
+				continue ;
+		}
+		if (str[*i] == c && !(*in_quotes))
 			break ;
-		i++;
+		(*i)++;
+		len++;
 	}
-	return (len);
+	return (ft_strdupword(&str[start], len));
+}
+
+static char	*ft_strdupword(char const *str, int len)
+{
+	char	*dup;
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	dup = malloc((len + 1) * sizeof(char));
+	if (!dup)
+		return (NULL);
+	while (i < len && str[i])
+	{
+		if (str[i] == '\'')
+			i++;
+		dup[j++] = str[i++];
+	}
+	dup[j] = '\0';
+	return (dup);
 }
