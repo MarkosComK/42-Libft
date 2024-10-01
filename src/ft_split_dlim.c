@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 15:56:35 by marsoare          #+#    #+#             */
-/*   Updated: 2024/10/01 17:07:15 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/10/01 17:09:54 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,7 @@ char	**ft_split_dlim(char const *s, char const *delimiters)
 		while (ft_isspace(s[i]))
 			i++;
 		if (is_delimiter(s[i], delimiters))
-		{
-			result[j++] = ft_strndup(&s[i], 1);
-			i++;
-		}
+			result[j++] = ft_strndup(&s[i++], 1);
 		else if (s[i] != '\0')
 		{
 			result[j] = word_get(s, delimiters, &i);
