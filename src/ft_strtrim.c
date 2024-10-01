@@ -12,6 +12,18 @@
 
 #include "libft.h"
 
+/**
+ * ft_strtrim - Trims the leading and trailing characters specified in 'set'
+ *              from the input string 's1'.
+ *
+ * Think of it like giving your string a haircut, removing any unwanted 
+ * characters from the start and end. For example:
+ * 
+ *     ft_strtrim("<<<42 is awesome>>>", "<>") 
+ *     // Result: "42 is awesome"
+ * 
+ * Now your string is neat and tidy!
+ */
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
