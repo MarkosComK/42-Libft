@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 18:21:51 by marsoare          #+#    #+#             */
-/*   Updated: 2024/08/28 18:22:35 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/10/01 16:38:32 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@
  * It returns the difference between the first differing characters or 0 if 
  * the strings are identical. For example:
  *
- *     ft_strcmp("hello", "hell")
- *     // Result: Non-zero value, because 'o' differs from the null terminator in "hell".
+ * ft_strcmp("hello", "hell")
+ * // Result: Non-zero value, because 'o' differs from the null terminator
+ * in "hell".
  *
  * It's like a side-by-side comparison of two strings, where the first 
  * mismatch determines the result.
