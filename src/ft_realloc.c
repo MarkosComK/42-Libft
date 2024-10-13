@@ -6,7 +6,7 @@
 /*   By: marsoare <marsoare@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 22:57:06 by marsoare          #+#    #+#             */
-/*   Updated: 2024/09/24 22:57:45 by marsoare         ###   ########.fr       */
+/*   Updated: 2024/09/24 22:57:39 by marsoare         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_realloc(void *ptr, size_t newsize)
 	if (newsize <= cursize)
 		return (ptr);
 	newptr = malloc(newsize);
-	ft_memcpy(ptr, newptr, cursize);
+	ft_memcpy(newptr, ptr, cursize);
 	free(ptr);
 	return (newptr);
 }
