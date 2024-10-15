@@ -33,10 +33,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1 || !set || s1[0] == '\0')
 		return (ft_strdup(""));
 	j = ft_strlen(s1) - 1;
-	while (ft_strchr(set, (int)s1[i]))
+	while (s1[i] && ft_strchr(set, (int)s1[i]))
 		i++;
-	while (ft_strrchr(set, (int)s1[j]))
+	while (j > i && ft_strrchr(set, (int)s1[j]))
 		j--;
+	if (j < i)
+		return (ft_strdup(""));
 	return (ft_substr(s1, i, j - i + 1));
 }
 /*
