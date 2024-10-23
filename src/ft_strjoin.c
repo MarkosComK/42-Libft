@@ -18,23 +18,18 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		totlen;
 	int		i;
 
+	if (!s1 && !s2)
+		return (ft_strdup(""));
+	if (!s1)
+		return (ft_strdup(s2));
+	if (!s2)
+		return (ft_strdup(s1));
 	totlen = ft_strlen(s1) + ft_strlen(s2);
 	endstr = (char *)malloc(sizeof(char) * totlen + 1);
 	if (endstr == 0)
 		return (NULL);
 	i = 0;
-	while (*s1)
-	{
-		endstr[i] = *s1;
-		i++;
-		s1++;
-	}
-	while (*s2)
-	{
-		endstr[i] = *s2;
-		i++;
-		s2++;
-	}
-	endstr[i] = 0;
+	ft_strlcpy(endstr, s1, totlen);
+	ft_strlcat(endstr, s2, totlen);
 	return (endstr);
 }
