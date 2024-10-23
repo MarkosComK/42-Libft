@@ -15,21 +15,27 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*endstr;
-	int		totlen;
 	int		i;
+	int		j;
 
-	if (!s1 && !s2)
-		return (ft_strdup(""));
 	if (!s1)
 		return (ft_strdup(s2));
 	if (!s2)
 		return (ft_strdup(s1));
-	totlen = ft_strlen(s1) + ft_strlen(s2);
-	endstr = (char *)malloc(sizeof(char) * totlen + 1);
+	endstr = (char *)malloc(sizeof(char) * ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (endstr == 0)
 		return (NULL);
 	i = 0;
-	ft_strlcpy(endstr, s1, totlen);
-	ft_strlcat(endstr, s2, totlen);
+	while (s1[i])
+	{
+		endstr[i] = s1[i];
+		i++;
+	}
+	j = 0;
+	while (s2[i])
+	{
+		endstr[i++] = s2[j++];
+	}
+	endstr[i] = 0;
 	return (endstr);
 }
