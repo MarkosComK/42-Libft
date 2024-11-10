@@ -21,6 +21,7 @@ SRCS = ft_putchar.c \
 	ft_tolower.c \
 	ft_toupper.c \
 	ft_atoi.c \
+	ft_atoll.c \
 	ft_calloc.c \
 	ft_strdup.c \
 	ft_bzero.c \
