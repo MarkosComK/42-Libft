@@ -12,14 +12,20 @@
 
 #include "libft.h"
 
-static long long	check_overflow(long long result, int digit, int sign)
+static long long	handle_overflow(long long result, char c, int sign)
 {
-	if (result > LLONG_MAX / 10 || (result == LLONG_MAX / 10
-			&& digit > LLONG_MAX % 10))
+	if (result > LLONG_MAX / 10)
 	{
 		if (sign == 1)
 			return (LLONG_MAX);
 		return (LLONG_MIN);
+	}
+	if (result == LLONG_MAX / 10)
+	{
+		if (sign == 1 && (c - '0') > LLONG_MAX % 10)
+			return (LLONG_MAX);
+		if (sign == -1 && (c - '0') > -(LLONG_MIN % 10))
+			return (LLONG_MIN);
 	}
 	return (result);
 }
@@ -41,14 +47,12 @@ long long	ft_atoll(const char *str)
 			sign = -1;
 		i++;
 	}
-	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	while (str[i] && ft_isdigit(str[i]))
 	{
-		result = check_overflow(result, str[i] - '0', sign);
-		if (result > LLONG_MAX || result < LLONG_MIN)
+		result = handle_overflow(result, str[i], sign);
+		if (result == LLONG_MAX || result == LLONG_MIN)
 			return (result);
-		result = result * 10 + (str[i] - '0');
-		i++;
+		result = result * 10 + (str[i++] - '0');
 	}
 	return (result * sign);
 }
-
